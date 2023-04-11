@@ -5,8 +5,8 @@ metadata:
   generateName: cleanup-after-sync-
   labels:
     codefresh.io/cert: cleanup-job
-  #annotations:
-      #argocd.argoproj.io/hook: PostSync
+  annotations:
+    argocd.argoproj.io/hook: PostSync
 spec:
   template:
     spec:
@@ -14,7 +14,7 @@ spec:
       - name: dummy-run
         image: alpine
         command:
-          - "sleep"
-          - "10"
+        - "sleep"
+        - "10"
       restartPolicy: Never
-  backoffLimit: 2    
+  backoffLimit: 2
